@@ -25,6 +25,10 @@
         "no-useless-escape": "off",
         "consistent-return": "off",
         "arrow-body-style": "off",
-        "comma-dangle": "off"
+        "comma-dangle": "off",
+        "func-names": "off",
+        "no-underscore-dangle": "off",
+        "no-shadow": "off",
+        "indent": "off"
     }
 }

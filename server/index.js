@@ -3,6 +3,8 @@ import bodyParser from 'body-parser'
 
 import routes from './routes'
 
+require('dotenv').config()
+
 const { indexRoute, itemRoute, userRoute } = routes
 
 const app = express()
