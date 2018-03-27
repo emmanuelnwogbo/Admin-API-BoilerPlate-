@@ -21,8 +21,8 @@ export default class UserController {
       res.header('x-auth', token).status(201).send({
         message: `you're in Admin`,
         user
-      }).catch(e => res.status(400).send({
-        e,
+      }).catch(error => res.status(400).send({
+        error,
         message: `something went wrong, pls contact Grandmaster`
       }))
     }).catch(error => {
@@ -45,8 +45,9 @@ export default class UserController {
           user
         });
       })
-    }).catch(e => {
+    }).catch(error => {
       res.status(401).send({
+        error,
         message: `your credentials are wrong please try again`
       })
     })
