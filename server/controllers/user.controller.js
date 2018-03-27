@@ -27,12 +27,28 @@ export default class UserController {
       }))
     }).catch(error => {
       res.status(400).send({
+        error,
         message: `a user with ${email} already exists`
       });
     })
   }
 
   static login(req, res) {
-
+    const {
+      email,
+      password
+    } = req.body;
+    User.findByCredentials(email, password).then(user => {
+      return user.generateAuthToken().then(token => {
+        res.header('x-auth', token).status(200).send({
+          message: `welcome back admin`,
+          user
+        });
+      })
+    }).catch(e => {
+      res.status(401).send({
+        message: `your credentials are wrong please try again`
+      })
+    })
   }
 }
