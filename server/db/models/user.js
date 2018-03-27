@@ -1,10 +1,16 @@
-import mongoose from 'mongoose'
 import jwt from 'jsonwebtoken'
 import bcrypt from 'bcrypt'
 import validator from 'validator'
 import _ from 'lodash'
 
-const { Schema } = mongoose
+import mongoosedb from '../mongoose'
+
+const {
+  mongoose
+} = mongoosedb;
+const {
+  Schema
+} = mongoose
 
 const UserSchema = new Schema({
   email: {
@@ -31,18 +37,16 @@ const UserSchema = new Schema({
     type: String,
     require: false
   },
-  tokens: [
-    {
-      access: {
-        type: String,
-        required: true
-      },
-      token: {
-        type: String,
-        required: true
-      }
+  tokens: [{
+    access: {
+      type: String,
+      required: true
+    },
+    token: {
+      type: String,
+      required: true
     }
-  ]
+  }]
 })
 
 UserSchema.methods.toJSON = function () {
@@ -56,16 +60,18 @@ UserSchema.methods.generateAuthToken = function () {
   const user = this
   const access = 'auth'
   const token = jwt
-    .sign(
-    {
-      _id: user._id.toHexString(),
-      access
-    },
+    .sign({
+        _id: user._id.toHexString(),
+        access
+      },
       process.env.JWT_SECRET
     )
     .toString()
 
-  user.tokens.push({ access, token })
+  user.tokens.push({
+    access,
+    token
+  })
 
   return user.save().then(() => {
     return token
@@ -77,7 +83,9 @@ UserSchema.methods.removeToken = function (token) {
 
   return user.update({
     $pull: {
-      tokens: { token }
+      tokens: {
+        token
+      }
     }
   })
 }
@@ -105,7 +113,9 @@ UserSchema.statics.findByToken = function (token) {
 UserSchema.statics.findByCredentials = function (email, password) {
   const User = this
 
-  return User.findOne({ email }).then(user => {
+  return User.findOne({
+    email
+  }).then(user => {
     if (!user) {
       return Promise.reject()
     }
@@ -139,4 +149,6 @@ UserSchema.pre('save', function (next) {
 
 const User = mongoose.model('User', UserSchema)
 
-module.exports = { User }
+module.exports = {
+  User
+}

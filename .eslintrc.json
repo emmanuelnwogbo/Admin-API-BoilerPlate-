@@ -29,6 +29,7 @@
         "func-names": "off",
         "no-underscore-dangle": "off",
         "no-shadow": "off",
-        "indent": "off"
+        "indent": "off",
+        "space-in-parens": "off"
     }
 }

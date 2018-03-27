@@ -5,18 +5,26 @@ import routes from './routes'
 
 require('dotenv').config()
 
-const { indexRoute, itemRoute, userRoute } = routes
+const {
+  indexRoute,
+  itemRoute,
+  userRoute
+} = routes
 
 const app = express()
 
 app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({
+  extended: false
+}))
 
 app.use('/api/v1', indexRoute)
 app.use('/api/v1/auth', userRoute)
 app.use('/api/v1/item', itemRoute)
 
 const PORT = process.env.PORT || 8080
+
+// console.log(config)
 
 app.listen(PORT, error => {
   if (error) {
