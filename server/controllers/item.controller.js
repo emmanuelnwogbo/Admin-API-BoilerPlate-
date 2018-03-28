@@ -35,6 +35,38 @@ export default class ItemController {
     })
   }
 
+  static updateItem(req, res) {
+    const id = req.params.itemid;
+
+    if (!ObjectID.isValid(id)) {
+      return res.status(404).send({
+        message: `the user id in req.params is invalid`
+      });
+    }
+
+    Item.findOneAndUpdate({
+      _id: id,
+      _admin: req.user._id
+    }, {
+      $set: req.body
+    }, {
+      new: true
+    }).then(item => {
+      if (!item) {
+        return res.status(404).send({
+          message: `no such item exists`
+        })
+      }
+
+      res.status(200).send({
+        message: `item updated successfully`,
+        item
+      })
+    }).catch(error => {
+      res.status(400).send(error);
+    });
+  }
+
   static deleteItem(req, res) {
     const id = req.params.itemid;
 
