@@ -12,12 +12,12 @@ const {
 } = Controllers
 const {
   addItem,
-  getAllItems
+  deleteItem
 } = ItemController;
 
 const router = express.Router()
 
 router.post('/new', authenticate, addItem);
-router.delete('/:itemid', authenticate, getAllItems)
+router.delete('/:itemid', authenticate, deleteItem)
 
 export default router

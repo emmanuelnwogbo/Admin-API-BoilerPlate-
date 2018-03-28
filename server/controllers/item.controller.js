@@ -1,4 +1,9 @@
-import Item from '../db/models/item';
+import mongodb from 'mongodb'
+import Item from '../db/models/item'
+
+const {
+  ObjectID
+} = mongodb;
 
 export default class ItemController {
   static addItem(req, res) {
@@ -30,7 +35,29 @@ export default class ItemController {
     })
   }
 
-  static getAllItems(req, res) {
+  static deleteItem(req, res) {
+    const id = req.params.itemid;
 
+    if (!ObjectID.isValid(id)) {
+      return res.status(404).send({
+        message: `the user id in req.params is invalid`
+      });
+    }
+
+
+    Item.findOneAndRemove({
+      _id: id,
+      _admin: req.user._id
+    }).then(item => {
+      if (!item) {
+        res.status(404).send({
+          message: `there's no item fitting that criteria`
+        })
+      }
+
+      res.send({
+        message: `item deleted`
+      })
+    })
   }
 }
