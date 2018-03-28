@@ -13,6 +13,13 @@ const {
 } = mongoose
 
 const UserSchema = new Schema({
+  nameofBusiness: {
+    type: String,
+    required: true,
+    trim: true,
+    minlength: 1,
+    unique: true,
+  },
   email: {
     type: String,
     required: true,
@@ -149,6 +156,4 @@ UserSchema.pre('save', function (next) {
 
 const User = mongoose.model('User', UserSchema)
 
-module.exports = {
-  User
-}
+export default User;

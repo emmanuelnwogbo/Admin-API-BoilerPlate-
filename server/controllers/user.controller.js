@@ -1,8 +1,5 @@
-import UserModel from '../db/models/user';
+import User from '../db/models/user';
 
-const {
-  User
-} = UserModel;
 
 export default class UserController {
   static signUp(req, res) {
@@ -51,5 +48,13 @@ export default class UserController {
         message: `your credentials are wrong please try again`
       })
     })
+  }
+
+  static logout(req, res) {
+    req.user.removeToken(req.token).then(() => {
+      return res.status(200).send({
+        message: `you logged out`
+      });
+    });
   }
 }

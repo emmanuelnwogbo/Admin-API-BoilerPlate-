@@ -1,9 +1,14 @@
-import mongoose from 'mongoose'
+import mongoosedb from '../mongoose'
 
-const { model } = mongoose
+const {
+  mongoose
+} = mongoosedb;
+const {
+  Schema
+} = mongoose
 
-const Item = model('Item', {
-  name: {
+const ItemSchema = new Schema({
+  title: {
     type: String,
     required: true,
     trim: true
@@ -26,8 +31,10 @@ const Item = model('Item', {
   },
   _admin: {
     type: mongoose.Schema.Types.ObjectId,
-    required: true
+    required: false
   }
 })
 
-module.exports = { Item }
+const Item = mongoose.model('Item', ItemSchema)
+
+export default Item
