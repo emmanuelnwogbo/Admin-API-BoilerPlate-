@@ -42,7 +42,7 @@ const UserSchema = new Schema({
   },
   promoPhoto: {
     type: String,
-    require: false
+    required: false
   },
   tokens: [{
     access: {
