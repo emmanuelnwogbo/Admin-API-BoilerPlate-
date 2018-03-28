@@ -31,7 +31,7 @@ const ItemSchema = new Schema({
   }],
   _admin: {
     type: mongoose.Schema.Types.ObjectId,
-    required: false
+    required: true
   }
 })
 

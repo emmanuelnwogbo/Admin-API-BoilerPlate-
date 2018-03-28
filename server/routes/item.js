@@ -11,6 +11,7 @@ const {
   ItemController
 } = Controllers
 const {
+  getItems,
   addItem,
   updateItem,
   deleteItem
@@ -18,6 +19,7 @@ const {
 
 const router = express.Router()
 
+router.get('/:adminid', getItems)
 router.post('/new', authenticate, addItem);
 router.patch('/:itemid', authenticate, updateItem)
 router.delete('/:itemid', authenticate, deleteItem)

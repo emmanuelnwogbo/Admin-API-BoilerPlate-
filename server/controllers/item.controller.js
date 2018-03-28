@@ -6,6 +6,27 @@ const {
 } = mongodb;
 
 export default class ItemController {
+  static getItems(req, res) {
+    const id = req.params.adminid;
+
+    if (!ObjectID.isValid(id)) {
+      return res.status(404).send({
+        message: `the user id in req.params is invalid`
+      });
+    }
+
+    Item.find({
+      _admin: id
+    }).then(items => {
+      res.status(200).send({
+        message: `found ${items.length} items`,
+        items
+      })
+    }, error => {
+      res.status(400).send(error);
+    })
+  }
+
   static addItem(req, res) {
     const {
       title,
