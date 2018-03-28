@@ -4,7 +4,8 @@ import Controllers from '../controllers'
 import Utilities from '../utilities'
 
 const {
-  inputChecker
+  itemInputChecker,
+  authenticate
 } = Utilities
 const {
   ItemController
@@ -16,7 +17,7 @@ const {
 
 const router = express.Router()
 
-router.post('/new', inputChecker, addItem);
-router.get('/', getAllItems)
+router.post('/new', authenticate, addItem);
+router.delete('/:itemid', authenticate, getAllItems)
 
 export default router

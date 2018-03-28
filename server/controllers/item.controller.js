@@ -6,15 +6,15 @@ export default class ItemController {
       title,
       price,
       description,
-      photo
+      photosURLs
     } = req.body;
 
     const item = new Item({
       title,
       price,
       description,
-      photo,
-      // _admin: req.param._id
+      photosURLs,
+      _admin: req.user._id
     })
 
     item.save().then(item => {

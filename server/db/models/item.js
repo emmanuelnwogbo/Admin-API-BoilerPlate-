@@ -24,11 +24,11 @@ const ItemSchema = new Schema({
     minlength: 1,
     trim: true
   },
-  photo: {
+  photosURLs: [{
     type: String,
     required: true,
     trim: true
-  },
+  }],
   _admin: {
     type: mongoose.Schema.Types.ObjectId,
     required: false
