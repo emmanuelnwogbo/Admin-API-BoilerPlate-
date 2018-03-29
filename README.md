@@ -33,7 +33,7 @@ This project has the following features working
 <h2 id="gettingstarted">Getting Started</h2>
 <p>The server folder holds all the files necessary for the logical implementation of the API. The package.json holds all dependencies, devdependencies and necessary scripts. <br>The API is written in ES6 and is run with <code>npm run dev</code> in development. <br>I've included a Procfile to specify that <code>npm start</code> is used to run the api server on heroku.</p>
 
-<h2 id="technologies">Technologies<h2>
+<h2 id="technologies">Technologies</h2>
 <ul>
   <li>Node js</li>
   <li>Express js</li>
@@ -62,3 +62,12 @@ This project has the following features working
   <li>Save your changes and type<code>npm run dev</code> and click enter</li>
   </ul>
 </p>
+
+<h2 id="tests">Tests</h2>
+<p>not yet included</p>
+
+<h2 id="authors">Authors</h2>
+<p><ul><li>Emmanuel Nwogbo</li></ul></p>
+
+<h2 id="license">License<h2>
+This project is licensed under the MIT License - see the <a href="https://github.com/emmanuelnwogbo/Admin-API-BoilerPlate-/blob/master/LICENSE">LICENSE.md</a>
