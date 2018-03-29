@@ -6,10 +6,10 @@
 <ul>
   <li><a href="#introduction">Introduction</a></li>
   <li><a href="#gettingstarted">Getting Started</a></li>
+  <li><a href="#technologies">Technologies</a></li>
   <li><a href="#prerequisites">Prerequisites</a></li>
   <li><a href="#installation">Installation</a></li>
   <li><a href="#tests">Tests</a></li>
-  <li><a href="#technologies">Technologies</a></li>
   <li><a href="#authors">Authors</a></li>
   <li><a href="#license">License</a></li>
 </ul>
@@ -33,6 +33,14 @@ This project has the following features working
 <h2 id="gettingstarted">Getting Started</h2>
 <p>The server folder holds all the files necessary for the logical implementation of the API. The package.json holds all dependencies, devdependencies and necessary scripts. <br>The API is written in ES6 and is run with <code>npm run dev</code> in development. <br>I've included a Procfile to specify that <code>npm start</code> is used to run the api server on heroku.</p>
 
+<h2 id="technologies">Technologies<h2>
+<ul>
+  <li>Node js</li>
+  <li>Express js</li>
+  <li>MongoDB</li>
+  <li>Babel</li>
+</ul>
+
 <h2 id="prerequisites">Prerequisites</h2>
 <p>You'll need to have Nodejs installed in order to run this project on your local machine. You'll also need to install mongodb, but I'd recommend using <a href="https://mlab.com">mLab</a> as it's easier to get started with than having to go through the hassle of the mongodb installation process on your own machine</p>
 
@@ -50,7 +58,7 @@ This project has the following features working
   <li>Navigate to the cloned repo's directory by typing <code>cd Admin-API-BoilerPlate-</code> and clicking the enter key</li>
   <li>install the project dependencies by typing <code>npm install</code> and clicking the enter key</li>
   <li>After the dependencies are installed successfully, open the project using your favorite text editor.</li>
-  <li>With your text editor open the <code>mongoose.js</code>file in the <code>server/db/</code>directory and add your mongodb connection variables<li>
+  <li>With your text editor open the <code>mongoose.js</code>file in the <code>server/db/</code>directory and add your mongodb connection variables</li>
   <li>Save your changes and type<code>npm run dev</code> and click enter</li>
   </ul>
 </p>
