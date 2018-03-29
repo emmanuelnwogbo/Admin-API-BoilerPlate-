@@ -1,4 +1,5 @@
-<h1>Api For Simple Crud Operations and FrontEnd Admin's<h2>
+<h1>Api For Simple Crud Operations and FrontEnd Admin's</h2>
+
 <p>This api is built for the purpose of handling the initial mundane structural setup when building an api with node, express and mongodb</p>
 
 <h2>Table of Contents</h2>
