@@ -69,5 +69,5 @@ This project has the following features working
 <h2 id="authors">Authors</h2>
 <p><ul><li>Emmanuel Nwogbo</li></ul></p>
 
-<h2 id="license">License<h2>
+<h2 id="license">License</h2>
 This project is licensed under the MIT License - see the <a href="https://github.com/emmanuelnwogbo/Admin-API-BoilerPlate-/blob/master/LICENSE">LICENSE.md</a>
