@@ -5,6 +5,8 @@ import _ from 'lodash'
 
 import mongoosedb from '../mongoose'
 
+require('dotenv').config();
+
 const {
   mongoose
 } = mongoosedb;

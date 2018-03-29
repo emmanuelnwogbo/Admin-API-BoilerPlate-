@@ -1,15 +1,18 @@
 import mongoose from 'mongoose'
-import config from '../config/config.json'
+
+require('dotenv').config();
 
 const env = process.env.NODE_ENV || 'development'
 
 mongoose.Promise = global.Promise
 if (env === 'development') {
-  mongoose.connect(config.development.MONGODB_URI).then(() => {
-    console.log('connected')
+  mongoose.connect(process.env.DEV_DB).then(() => {
+    console.log('connected');
   }, err => console.log(err))
+} else if (env === 'test') {
+  mongoose.connect(process.env.TEST_DB)
 } else {
-  mongoose.connect(process.env.prod_db)
+  mongoose.connect(process.env.PROD_DB)
 }
 
 module.exports = {

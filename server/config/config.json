@@ -1,8 +1,0 @@
-{
-  "test": {
-    "MONGODB_URI": "mongodb://localhost:27017/TodoAppTest"
-  },
-  "development": {
-    "MONGODB_URI": "mongodb://emmanuel:08033426880@ds125489.mlab.com:25489/admin-api-prod-dev"
-  }
-}

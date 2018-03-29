@@ -30,6 +30,7 @@
         "no-underscore-dangle": "off",
         "no-shadow": "off",
         "indent": "off",
-        "space-in-parens": "off"
+        "space-in-parens": "off",
+        "function-paren-newline": "off"
     }
 }

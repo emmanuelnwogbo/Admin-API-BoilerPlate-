@@ -24,8 +24,6 @@ app.use('/api/v1/item', itemRoute)
 
 const PORT = process.env.PORT || 8080
 
-// console.log(config)
-
 app.listen(PORT, error => {
   if (error) {
     return console.log(error)
