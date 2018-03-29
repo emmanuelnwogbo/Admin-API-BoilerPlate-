@@ -4,15 +4,15 @@
 
 <h2>Table of Contents</h2>
 <ul>
-  <li><a>Introduction</a></li>
-  <li><a>Getting Started</a></li>
-  <li><a>Prerequisites</a></li>
-  <li><a>Installation</a></li>
-  <li><a>Tests</a></li>
-  <li><a>Built With</a></li>
-  <li><a>Authors</a></li>
-  <li><a>License</a></li>
+  <li><a href="#introduction">Introduction</a></li>
+  <li><a href="">Getting Started</a></li>
+  <li><a href="">Prerequisites</a></li>
+  <li><a href="">Installation</a></li>
+  <li><a href="">Tests</a></li>
+  <li><a href="">Built With</a></li>
+  <li><a href="">Authors</a></li>
+  <li><a href="">License</a></li>
 </ul>
 
-<h2>Introduction</h2>
+<h2 id="introduction">Introduction</h2>
 <p>I built this api because I was tired of having to set up things like routes, controllers, db connections, and input validation over and over again whenever I was starting a new project using Express, MongoDB and Nodejs.</p>
