@@ -35,3 +35,22 @@ This project has the following features working
 
 <h2 id="prerequisites">Prerequisites</h2>
 <p>You'll need to have Nodejs installed in order to run this project on your local machine. You'll also need to install mongodb, but I'd recommend using <a href="https://mlab.com">mLab</a> as it's easier to get started with than having to go through the hassle of the mongodb installation process on your own machine</p>
+
+<h2 id="installation">Installation</h2>
+<p>
+  <ul>
+  <li>open your favorite terminal on your local machine</li>
+  <li>Navigate to a directory of your own choosing</li>
+  <li>Clone this repo into that directory
+    <ul>
+      <li>Using SSH: <code>git clone git@github.com:emmanuelnwogbo/Admin-API-BoilerPlate-</code></li>
+      <li>Using HTTP: <code>git clone https://github.com/emmanuelnwogbo/Admin-API-BoilerPlate-</code></li>
+    </ul>
+  </li>
+  <li>Navigate to the cloned repo's directory by typing <code>cd Admin-API-BoilerPlate-</code> and clicking the enter key</li>
+  <li>install the project dependencies by typing <code>npm install</code> and clicking the enter key</li>
+  <li>After the dependencies are installed successfully, open the project using your favorite text editor.</li>
+  <li>With your text editor open the <code>mongoose.js</code>file in the <code>server/db/</code>directory and add your mongodb connection variables<li>
+  <li>Save your changes and type<code>npm run dev</code> and click enter</li>
+  </ul>
+</p>
